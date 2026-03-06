@@ -1,3 +1,8 @@
+---
+layout: default
+title: Resume
+---
+
 # Saif Ahmed
 
 ## Computer Science Major (Mathematics Minor)
