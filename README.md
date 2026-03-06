@@ -1,217 +1,259 @@
-Hosting a Resume Website Using Markdown, Jekyll, and GitHub Pages
-Purpose
+# Hosting a Resume Website Using Markdown, Jekyll, and GitHub Pages
 
-This README explains the technical process used to create and host a resume as a static website using Markdown, Jekyll, and GitHub Pages. The goal is to document the steps required to format a resume using lightweight markup and publish it online through a static site generator and version-controlled repository.
+## Purpose
 
-The intended audience for this document is students or developers who want to publish a resume website using modern technical writing tools. The instructions follow the recommendations in Andrew Etter’s Modern Technical Writing, which promotes simple tools such as Markdown, distributed version control, static site generators, and forges like GitHub for producing and maintaining documentation.
+This README explains how a resume was created and published as a static website using modern technical documentation tools. The project demonstrates how Markdown, Git, Jekyll, and GitHub Pages can be used together to produce structured and maintainable documentation.
 
-Prerequisites
+The primary goal of this assignment is to host a resume online using a static site generator while documenting the process in a clear and organized way. The intended audience for this README is a student or technical writer who wants to understand how to create a simple static documentation site using modern technical writing practices.
 
-Before following these instructions, the reader should have the following:
+The approach used in this project follows the recommendations from Andrew Etter’s *Modern Technical Writing*. Etter encourages writers to use lightweight markup languages, distributed version control systems, static site generators, and forges to create documentation that is easy to maintain and publish.
 
-A GitHub account
+By combining Markdown with Git and Jekyll, this project demonstrates how technical documentation can be written in plain text, tracked with version control, and automatically converted into a professional website.
 
-Git installed on their computer
+---
 
-Basic knowledge of Markdown syntax
+## Prerequisites
 
-A resume written in Markdown format
+Before following these instructions, the reader should have the following resources available.
 
-A web browser
+### Accounts
 
-Access to a command line (Git Bash or terminal)
+- A GitHub account
+- Internet access
 
-Software used in this project:
+### Software
 
-Static site generator: Jekyll
+- Git installed on the computer
+- A text editor such as Visual Studio Code, Notepad++, or another Markdown-compatible editor
+- A web browser
 
-Forge: GitHub
+### Knowledge
 
-Hosting platform: GitHub Pages
+- Basic familiarity with Markdown syntax
+- Basic command line usage
+- Basic Git commands such as cloning and pushing
 
-Instructions
-Step 1: Write the resume using Markdown
+### Tools Used in This Project
 
-Begin by writing the resume in Markdown format instead of HTML or Word. Markdown is a lightweight markup language that allows writers to focus on content rather than formatting.
+| Tool | Purpose |
+|-----|------|
+| Markdown | Writing the resume content |
+| Git | Version control |
+| GitHub | Hosting the source repository |
+| Jekyll | Static site generator |
+| GitHub Pages | Hosting the generated website |
 
-For example:
+These tools align with Etter’s principle of using simple, text-based systems that allow documentation to be easily maintained and automatically published.
 
-# Saif Ahmed
-Computer Science Major (Mathematics Minor)
+---
 
-## Contact Information
-Phone: 813-304-7047
-Email: Seeso.saif@gmail.com
+## Instructions
 
-Andrew Etter recommends using lightweight markup because it keeps documents simple and easy to maintain. Markdown files are plain text, meaning they can be edited with any text editor and tracked easily using version control.
+The following steps explain how to create and publish a resume website using a static site generator.
 
-Step 2: Create a GitHub repository
+### Step 1: Write the Resume Using Markdown
 
-Next, create a repository on GitHub to store the website source files.
+Create the resume using Markdown instead of HTML or word processing software.
 
-Log in to GitHub.
+Example structure:
+Name
+Education
+Work Experience
+Skills
+### Step 2: Create a GitHub Repository
 
-Click New Repository.
+Create a repository on GitHub to store the project files.
 
-Name the repository.
+1. Log into GitHub.
+2. Click **New Repository**.
+3. Enter a repository name.
+4. Set the repository to **Public**.
+5. Create the repository.
 
-Set it to Public.
+Using a Git repository follows Etter’s recommendation of using distributed version control systems to manage documentation. Git allows changes to be tracked, reviewed, and reverted if necessary.
 
-Create the repository.
+---
 
-Using GitHub follows Etter’s recommendation to store documentation in a distributed version control system. Git allows changes to be tracked, shared, and reviewed efficiently.
+### Step 3: Organize the Project Structure
 
-Step 3: Organize the project structure
+Organize the project files using a clear directory structure.
 
-The repository must contain the source files used to generate the website. In this project the structure looks like this:
-
-Assignment-2-Website
+Example structure:Assignment-2-Website
 │
-├── docs
-│   ├── _config.yml
-│   ├── index.md
-│   └── resume
-│       └── index.md
+├── README.md
 │
-└── README.md
+└── docs
+├── _config.yml
+├── index.md
+└── resume
+└── index.md
 
-The docs folder contains the website source files. GitHub Pages is configured to publish the site from this folder.
 
-Organizing files in a structured directory improves maintainability, which aligns with Etter’s focus on clear and maintainable documentation systems.
+The `docs` directory contains the files used to generate the website. GitHub Pages can publish a site directly from this folder.
 
-Step 4: Configure the Jekyll static site generator
+Maintaining a structured directory layout improves clarity and maintainability, which are key principles in technical documentation.
 
-A configuration file called _config.yml is used to configure Jekyll.
+---
 
-Example:
+### Step 4: Configure the Static Site Generator
 
+Create a configuration file called `_config.yml` inside the `docs` directory.
+
+Example configuration:
 title: Assignment 2 Website
 theme: minima
 markdown: kramdown
 
-This file tells GitHub Pages to generate the site using the Minima theme and the Kramdown Markdown processor.
+This configuration tells Jekyll which theme to use and which Markdown processor should convert Markdown into HTML.
 
-Static site generators convert Markdown into HTML automatically. Etter encourages using static site generators because they separate content from design and simplify publishing.
-
-Step 5: Create the website home page
-
-The homepage is created using index.md.
-
-Example front matter:
+Static site generators automate the process of converting documentation into websites. Etter recommends this approach because it separates content creation from design and simplifies publishing workflows.
 
 ---
+
+### Step 5: Create the Homepage
+
+Create a file named `index.md` inside the `docs` directory.
+
+Add Jekyll front matter to the file:
 layout: default
 title: Home
----
 
-The homepage includes a short description and a link to the resume page.
+Then add content for the homepage.
 
-# Assignment 2 Website
+Example:Assignment 2 Website
 
 Welcome to my resume website.
 
-[View my resume](resume/)
+![]View my resume()
 
-Front matter is required by Jekyll so it knows how to render the page.
 
-Step 6: Add the resume page
-
-The resume itself is stored as a Markdown page inside a folder.
-
-docs/resume/index.md
-
-The page includes front matter:
+The homepage provides an overview of the site and links to the resume page.
 
 ---
+
+### Step 6: Add the Resume Page
+
+Create a folder named `resume` inside the `docs` directory and add a Markdown file called `index.md`.
+
+Example path:docs/resume/index.md
+
+
+Include Jekyll front matter at the top of the file:
 layout: default
 title: Resume
+Below the front matter, add the Markdown resume content.
+
+Using Markdown for the resume ensures the document remains portable and easy to update.
+
 ---
 
-Then the Markdown resume content follows. When Jekyll builds the site, this Markdown file becomes a formatted webpage.
+### Step 7: Enable GitHub Pages
 
-This method demonstrates Etter’s principle of keeping documentation simple and portable, since the same Markdown file can be reused in other systems.
+Publish the website using GitHub Pages.
 
-Step 7: Enable GitHub Pages hosting
+1. Open the repository settings.
+2. Navigate to the **Pages** section.
+3. Select **Deploy from branch**.
+4. Choose the **main branch**.
+5. Set the folder to `/docs`.
 
-To publish the website:
+GitHub Pages will automatically build the website using Jekyll.
 
-Open the repository settings.
+Automated publishing is a key concept discussed in *Modern Technical Writing* because it reduces manual effort and minimizes publishing errors.
 
-Go to Pages.
+---
 
-Select Deploy from branch.
+### Step 8: Verify the Website
 
-Choose the main branch.
+After enabling GitHub Pages, open the generated website URL.
 
-Set the folder to /docs.
+Verify that:
 
-GitHub automatically builds the website using Jekyll and publishes it online.
+- The homepage loads correctly
+- The resume page is accessible
+- The formatting appears correctly
 
-Once deployed, the website becomes accessible through a GitHub Pages URL.
+If changes are made to the Markdown files, simply commit and push the updates to GitHub. GitHub Pages will automatically rebuild the site.
 
-This step illustrates Etter’s principle of automated publishing systems, which reduce manual work and errors.
+This workflow demonstrates how version control and automated publishing can simplify documentation management.
 
-Step 8: Verify the website
+---
 
-After deployment:
+## Further Resources
 
-Open the GitHub Pages URL.
+The following resources provide additional information about the technologies used in this project.
 
-Confirm the homepage loads correctly.
-
-Click the resume link to ensure the page renders properly.
-
-If the resume changes later, simply update the Markdown file and push the changes to GitHub. GitHub Pages will rebuild the site automatically.
-
-This workflow demonstrates the advantage of combining version control with static site generators.
-
-Further Resources
-
-The following resources provide additional information about the technologies used in this project:
-
-Markdown Guide
+### Markdown Guide
 https://www.markdownguide.org/
 
-GitHub Pages Documentation
+### GitHub Pages Documentation
 https://docs.github.com/en/pages
 
-Jekyll Official Documentation
+### Jekyll Documentation
 https://jekyllrb.com/docs/
 
-Modern Technical Writing by Andrew Etter
+### Modern Technical Writing – Andrew Etter
 https://www.oreilly.com/library/view/modern-technical-writing/9781492049382/
 
-Git Tutorial
+### Git Documentation
 https://git-scm.com/docs
 
-FAQ
-Why use Markdown instead of writing HTML directly?
+These resources provide additional background information on Markdown, static site generators, and version control systems.
 
-Markdown is easier to read and write than raw HTML. It allows writers to focus on content rather than formatting. According to Andrew Etter, lightweight markup languages make documentation easier to maintain and collaborate on because they are simple plain-text files.
+---
 
-Why doesn’t my website update when I change my Markdown file?
+## FAQ
 
-GitHub Pages only updates when changes are committed and pushed to the repository. After pushing updates, GitHub must rebuild the site, which may take a few minutes. Clearing the browser cache or refreshing the page usually resolves this issue.
+### Why use Markdown instead of HTML?
 
-Why use a static site generator instead of writing a normal website?
+Markdown is simpler to read and write than raw HTML. Because Markdown is plain text, it allows writers to focus on content rather than formatting. Andrew Etter recommends lightweight markup languages because they make documentation easier to maintain and integrate with version control systems.
 
-Static site generators automatically convert Markdown files into formatted HTML pages. This approach allows content to remain simple while the generator handles layout and design. It also improves security and performance because static websites do not rely on server-side processing.
+---
 
-Credits
+### Why use a static site generator?
 
-Author
+Static site generators automatically convert Markdown files into HTML pages. This allows writers to maintain documentation in plain text while generating professional-looking websites automatically. Static sites are also faster and more secure because they do not rely on server-side processing.
+
+---
+
+### Why doesn’t my website update immediately?
+
+GitHub Pages rebuilds the website after changes are pushed to the repository. This process may take a few minutes. Refreshing the browser or clearing the cache will usually display the updated version.
+
+---
+
+### Why use Git for documentation?
+
+Git tracks every change made to the documentation. This allows authors to review edits, revert mistakes, and collaborate with others. Version control systems make documentation easier to manage over time.
+
+---
+
+## Credits
+
+### Author
+
 Saif Ahmed
 
-Peer Review Contributors
-Classmates participating in the in-class peer editing session.
+### Peer Review Contributors
 
-Third-Party Software
+Mohammad Kmr  
+Ahmed Abdelgalil  
 
-Jekyll Static Site Generator
+### Third-Party Software
+
+Jekyll Static Site Generator  
 https://jekyllrb.com/
 
-Minima Theme
+Minima Theme  
 https://github.com/jekyll/minima
 
-GitHub Pages Hosting
+GitHub Pages Hosting  
 https://pages.github.com/
+
+### Additional Tools
+
+Git Version Control  
+https://git-scm.com/
+
+Markdown Documentation  
+https://www.markdownguide.org/
